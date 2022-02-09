@@ -17,3 +17,6 @@ npm run build
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### Convert ES6 to ES5
+npm install --save-dev babel-cli babel-preset-env

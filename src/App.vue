@@ -1,30 +1,51 @@
 <template>
+    <Menu  />
+
+    <div class="barra mb-4"></div>
+ 
+    <barra-menu/>
+    <listar-numeros/>
+</template>
+<!-- 
+
   <div id="nav">
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
   </div>
-  <router-view/>
-</template>
+  <router-view />
+</template> -->
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import Menu from './components/Menu';
+import BarraMenu from './components/BarraMenu';
+import listarNumeros from './components/ListarNumeros';
+import {provide} from 'vue';
 
-#nav {
-  padding: 30px;
-}
+export default{
+  components:{
+    Menu,
+    BarraMenu,
+    listarNumeros
+  },
+  setup() {
+     let url ="consumoApi.php"; // PRODCUCCION
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+      provide('url', url);
+  },
 }
+</script>
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+<style  scoped>
+ 
+  .barra{
+    top: 90px;
+    padding: 1rem;
+    background-color:white;
+    background: linear-gradient(to bottom right,rgb(161, 202, 36), rgb(134, 150, 90));
+    height: 60px;
+    display: block;
+    position:sticky; 
+  }
+
+
 </style>
